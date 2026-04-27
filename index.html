@@ -3,47 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Security: Stop browsers from guessing file types -->
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <title>E-Market Gambia | Secure Tech Hub</title>
     <style>
-        body { background-color: #000000; color: #00ff00; font-family: monospace; padding: 20px; line-height: 1.6; }
+        body { background-color: #000000; color: #00ff00; font-family: monospace; padding: 20px; line-height: 1.6; text-align: center;}
         .border-box { border: 2px solid #00ff00; padding: 20px; margin-bottom: 20px; border-radius: 8px; }
-        .seller-box { border: 2px dashed yellow; color: yellow; padding: 20px; text-align: center; }
-        button { background-color: #00ff00; color: black; border: none; padding: 12px 25px; font-weight: bold; cursor: pointer; border-radius: 5px; }
-        .btn-pay { background-color: yellow; color: black; padding: 15px; width: 100%; font-size: 1.1em; }
-        .secure-tag { color: #5555ff; font-size: 0.8em; font-weight: bold; }
+        .seller-box { border: 2px dashed yellow; color: yellow; padding: 20px; border-radius: 8px; }
+        .item-list { text-align: left; display: inline-block; margin-bottom: 15px; color: #ffffff; font-size: 0.9em; }
+        button { border: none; padding: 15px 30px; font-weight: bold; cursor: pointer; border-radius: 5px; width: 100%; margin: 10px 0; font-size: 1em; transition: 0.3s; }
+        button:hover { opacity: 0.8; transform: scale(1.02); }
+        .btn-whatsapp { background-color: #25D366; color: white; }
+        .btn-wave { background-color: #1dcaff; color: white; }
+        .secure-tag { color: #5555ff; font-size: 0.8em; font-weight: bold; text-transform: uppercase; }
+        h2 { margin-top: 0; font-size: 1.2em; color: #00ff00; }
     </style>
 </head>
 <body>
 
-    <header style="text-align: center; border-bottom: 1px solid #333; padding-bottom: 20px;">
+    <header style="border-bottom: 1px solid #333; padding-bottom: 20px; margin-bottom: 20px;">
         <span class="secure-tag">[ SECURE SESSION ACTIVE ]</span>
         <h1>[ E-MARKET GAMBIA ]</h1>
-        <p>Marketplace • Repair Lab • Tech Security</p>
+        <p>Repair Lab • Parts • Tech Security</p>
     </header>
 
     <div class="border-box">
         <h2>--- SHOP ACCESSORIES ---</h2>
-        <p>Verified Parts for Samsung, iPhone & Redmi</p>
-        <button onclick="location.href='#store'">GO TO MARKET</button>
+        <div class="item-list">
+            • Fast Chargers (20W / 45W)<br>
+            • High-Cap Power Banks<br>
+            • USB-C & Lightning Cables<br>
+            • Screen Protectors (iPhone/Redmi)<br>
+            • Wired & Wireless Earphones
+        </div>
+        <button class="btn-whatsapp" onclick="location.href='https://wa.me.'">
+            ORDER ON WHATSAPP
+        </button>
     </div>
 
     <div class="border-box">
-        <h2>--- REPAIR LAB SERVICES ---</h2>
-        <p>Screen Repair | Flashing | Cyber Security Audits</p>
-        <button onclick="location.href='#repair'">BOOK SERVICE</button>
+        <h2>--- REPAIR SERVICES ---</h2>
+        <p>Screen Repair | Flashing | Cyber Audits</p>
+        <button class="btn-whatsapp" onclick="location.href='https://wa.me.'">
+            BOOK REPAIR NOW
+        </button>
     </div>
 
     <div class="seller-box">
-        <h2>JOIN THE MARKETPLACE</h2>
-        <p>Safe & Secure Selling for D500/Month</p>
-        <!-- Security: Payment will be handled by a secure API later -->
-        <button class="btn-pay" onclick="alert('Payment Gateway Loading... Secure SSL Tunnel Active.')">PAY & POST PRODUCT</button>
+        <h2>--- PAY VIA WAVE ---</h2>
+        <p>Instant Mobile Money Payment</p>
+        <button class="btn-wave" onclick="location.href='https://gm.confirm.b.wave.com/lb/+2203679533/IIIIlIlIII'">
+            SEND PAYMENT
+        </button>
     </div>
 
-    <footer style="margin-top: 40px; text-align: center; border-top: 1px solid #333; padding-top: 10px;">
+    <footer style="margin-top: 40px; border-top: 1px solid #333; padding-top: 10px; font-size: 0.8em; color: #666;">
         <p>&copy; 2026 E-Market Gambia | Encrypted via Localhost Lab</p>
+        <p>Technician: Ebrima | Brikama garage, Gambia</p>
     </footer>
 
 </body>
