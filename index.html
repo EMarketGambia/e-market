@@ -7,44 +7,54 @@
     <style>
         body { background-color: #000000; color: #00ff00; font-family: monospace; padding: 20px; line-height: 1.6; text-align: center;}
         .border-box { border: 2px solid #00ff00; padding: 20px; margin-bottom: 20px; border-radius: 8px; }
-        .seller-portal { border: 2px dashed #1dcaff; color: #1dcaff; padding: 20px; margin-bottom: 30px; }
-        button { border: none; padding: 15px 20px; font-weight: bold; cursor: pointer; border-radius: 5px; width: 100%; margin: 10px 0; font-size: 1.1em; }
-        .btn-post { background-color: #1dcaff; color: white; }
+        .seller-portal { border: 2px dashed #1dcaff; color: #1dcaff; padding: 20px; margin-bottom: 30px; border-radius: 8px;}
+        button { border: none; padding: 15px 20px; font-weight: bold; cursor: pointer; border-radius: 5px; width: 100%; margin: 10px 0; font-size: 1.1em; transition: 0.3s; }
+        button:hover { opacity: 0.8; transform: scale(1.02); }
+        .btn-wave { background-color: #1dcaff; color: white; }
+        .btn-upload { background-color: #ffffff; color: #000000; }
         .btn-whatsapp { background-color: #25D366; color: white; }
         .price-tag { color: gold; font-size: 1.2em; font-weight: bold; }
+        .secure-tag { color: #5555ff; font-size: 0.8em; font-weight: bold; text-transform: uppercase; }
     </style>
 </head>
 <body>
 
-    <header>
+    <header style="border-bottom: 1px solid #333; padding-bottom: 20px; margin-bottom: 20px;">
+        <span class="secure-tag">[ SECURE MARKETPLACE ACTIVE ]</span>
         <h1>[ E-MARKET GAMBIA ]</h1>
-        <p>Brikama's Automated Tech Marketplace</p>
+        <p>Brikama Garage Automated Tech & Trade</p>
     </header>
 
-    <!-- SELLER PORTAL -->
+    <!-- SELLER PORTAL: AUTOMATION START -->
     <div class="seller-portal">
-        <h2>OPEN YOUR SHOP</h2>
-        <p>Post Unlimited Items for <span class="price-tag">D500/Month</span></p>
+        <h2>--- OPEN YOUR SHOP ---</h2>
+        <p>Post your products for only <span class="price-tag">D500/Month</span></p>
         
-        <!-- STEP 1: THEY PAY YOU -->
-        <button class="btn-post" onclick="location.href='https://wave.com'">
-            1. PAY VIA WAVE (D500)
+        <!-- STEP 1: WAVE PAYMENT -->
+        <button class="btn-wave" onclick="location.href='https://wave.com'">
+            1. PAY D500 VIA WAVE
         </button>
 
-        <!-- STEP 2: THEY SUBMIT THE PRODUCT (Automation) -->
-        <button style="background-color: white; color: black;" onclick="alert('Redirecting to Seller Upload Form...')">
+        <!-- STEP 2: GOOGLE FORM UPLOAD -->
+        <button class="btn-upload" onclick="location.href='https://google.com'">
             2. UPLOAD PRODUCT DATA
         </button>
+        
+        <p style="font-size: 0.8em; color: #aaa;">Admin will approve your post within 24 hours.</p>
     </div>
 
     <div class="border-box">
-        <h2>--- LATEST LISTINGS ---</h2>
-        <p><i>Automation Engine Initializing...</i></p>
-        <!-- Your automated products will appear here soon -->
+        <h2>--- MARKETPLACE LISTINGS ---</h2>
+        <p><i>Checking for new uploads from Brikama...</i></p>
+        <!-- Your future products go here -->
+        <button class="btn-whatsapp" onclick="location.href='https://wa.me.'">
+            CHAT WITH ADMIN
+        </button>
     </div>
 
-    <footer>
-        <p>Security Level: Encrypted | Location: Brikama Garage</p>
+    <footer style="margin-top: 40px; border-top: 1px solid #333; padding-top: 10px; font-size: 0.8em; color: #666;">
+        <p>Technician: Ebrima | Brikama Garage, Gambia</p>
+        <p>Secure Node & Automated via GitHub/Google</p>
     </footer>
 
 </body>
