@@ -3,61 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Market Gambia | Secure Tech Hub</title>
+    <title>E-Market Gambia | Alibaba Style Hub</title>
     <style>
         body { background-color: #000000; color: #00ff00; font-family: monospace; padding: 20px; line-height: 1.6; text-align: center;}
         .border-box { border: 2px solid #00ff00; padding: 20px; margin-bottom: 20px; border-radius: 8px; }
-        .seller-box { border: 2px dashed yellow; color: yellow; padding: 20px; border-radius: 8px; }
-        .item-list { text-align: left; display: inline-block; margin-bottom: 15px; color: #ffffff; font-size: 0.9em; }
-        button { border: none; padding: 15px 30px; font-weight: bold; cursor: pointer; border-radius: 5px; width: 100%; margin: 10px 0; font-size: 1em; transition: 0.3s; }
-        button:hover { opacity: 0.8; transform: scale(1.02); }
+        .seller-portal { border: 2px dashed #1dcaff; color: #1dcaff; padding: 20px; margin-bottom: 30px; }
+        button { border: none; padding: 15px 20px; font-weight: bold; cursor: pointer; border-radius: 5px; width: 100%; margin: 10px 0; font-size: 1.1em; }
+        .btn-post { background-color: #1dcaff; color: white; }
         .btn-whatsapp { background-color: #25D366; color: white; }
-        .btn-wave { background-color: #1dcaff; color: white; }
-        .secure-tag { color: #5555ff; font-size: 0.8em; font-weight: bold; text-transform: uppercase; }
-        h2 { margin-top: 0; font-size: 1.2em; color: #00ff00; }
+        .price-tag { color: gold; font-size: 1.2em; font-weight: bold; }
     </style>
 </head>
 <body>
 
-    <header style="border-bottom: 1px solid #333; padding-bottom: 20px; margin-bottom: 20px;">
-        <span class="secure-tag">[ SECURE SESSION ACTIVE ]</span>
+    <header>
         <h1>[ E-MARKET GAMBIA ]</h1>
-        <p>Repair Lab • Parts • Tech Security</p>
+        <p>Brikama's Automated Tech Marketplace</p>
     </header>
 
-    <div class="border-box">
-        <h2>--- SHOP ACCESSORIES ---</h2>
-        <div class="item-list">
-            • Fast Chargers (20W / 45W)<br>
-            • High-Cap Power Banks<br>
-            • USB-C & Lightning Cables<br>
-            • Screen Protectors (iPhone/Redmi)<br>
-            • Wired & Wireless Earphones
-        </div>
-        <button class="btn-whatsapp" onclick="location.href='https://wa.me.'">
-            ORDER ON WHATSAPP
+    <!-- SELLER PORTAL -->
+    <div class="seller-portal">
+        <h2>OPEN YOUR SHOP</h2>
+        <p>Post Unlimited Items for <span class="price-tag">D500/Month</span></p>
+        
+        <!-- STEP 1: THEY PAY YOU -->
+        <button class="btn-post" onclick="location.href='https://wave.com'">
+            1. PAY VIA WAVE (D500)
+        </button>
+
+        <!-- STEP 2: THEY SUBMIT THE PRODUCT (Automation) -->
+        <button style="background-color: white; color: black;" onclick="alert('Redirecting to Seller Upload Form...')">
+            2. UPLOAD PRODUCT DATA
         </button>
     </div>
 
     <div class="border-box">
-        <h2>--- REPAIR SERVICES ---</h2>
-        <p>Screen Repair | Flashing | Cyber Audits</p>
-        <button class="btn-whatsapp" onclick="location.href='https://wa.me.'">
-            BOOK REPAIR NOW
-        </button>
+        <h2>--- LATEST LISTINGS ---</h2>
+        <p><i>Automation Engine Initializing...</i></p>
+        <!-- Your automated products will appear here soon -->
     </div>
 
-    <div class="seller-box">
-        <h2>--- PAY VIA WAVE ---</h2>
-        <p>Instant Mobile Money Payment</p>
-        <button class="btn-wave" onclick="location.href='https://wave.com'">
-            SEND PAYMENT
-        </button>
-    </div>
-
-    <footer style="margin-top: 40px; border-top: 1px solid #333; padding-top: 10px; font-size: 0.8em; color: #666;">
-        <p>&copy; 2026 E-Market Gambia | Encrypted via Localhost Lab</p>
-        <p>Technician: Ebrima | Brikama Garage, Gambia</p>
+    <footer>
+        <p>Security Level: Encrypted | Location: Brikama Garage</p>
     </footer>
 
 </body>
