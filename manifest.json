@@ -1,0 +1,16 @@
+{
+  "name": "E-Market Gambia",
+  "short_name": "EMarket",
+  "description": "Multi-vendor marketplace for Brikama Garage and beyond.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#f0f2f5",
+  "theme_color": "#ff6600",
+  "icons": [
+    {
+      "src": "https://placeholder.com",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
