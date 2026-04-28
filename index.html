@@ -5,79 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Market | Brikama Tech Hub</title>
     <style>
-        body { background: #000; color: #0f0; font-family: sans-serif; margin: 0; padding: 0; text-align: center; }
-        .hero { background: linear-gradient(135deg, #1dcaff, #00ff00); color: #000; padding: 40px 20px; }
+        body { background: #000; color: #0f0; font-family: 'Courier New', monospace; margin: 0; padding: 0; text-align: center; }
+        .hero { background: linear-gradient(135deg, #1dcaff, #00ff00); color: #000; padding: 30px 10px; border-bottom: 3px solid #0f0; }
         .container { padding: 15px; max-width: 800px; margin: auto; }
         
-        /* ADVERTISING PHOTO SECTION */
-        .ad-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 20px 0; }
-        .ad-card { background: #111; border: 1px solid #333; border-radius: 10px; overflow: hidden; padding-bottom: 10px; }
-        .ad-card img { width: 100%; height: 120px; object-fit: cover; }
+        /* ADVERTISING GRID */
+        .ad-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0; }
+        .ad-card { background: #111; border: 2px solid #333; border-radius: 12px; overflow: hidden; padding-bottom: 10px; transition: 0.3s; }
+        .ad-card:hover { border-color: #0f0; }
         
-        /* BUTTONS */
-        button { border: none; padding: 15px; border-radius: 8px; width: 100%; font-weight: bold; cursor: pointer; margin: 8px 0; font-size: 14px; }
-        .btn-price { background: #333; color: gold; border: 1px solid gold; font-size: 11px; padding: 5px; width: 80%; }
+        /* THE PICTURES */
+        .ad-card img { width: 100%; height: 130px; object-fit: cover; display: block; background: #222; }
+        
+        button { border: none; padding: 14px; border-radius: 8px; width: 100%; font-weight: bold; cursor: pointer; margin: 8px 0; font-size: 13px; }
+        .btn-price { background: #000; color: #0f0; border: 1px solid #0f0; font-size: 10px; padding: 6px; width: 85%; margin: 5px auto; display: block;}
         .btn-wave { background: #1dcaff; color: #fff; }
         .btn-whatsapp { background: #25D366; color: #fff; }
         .btn-africell { background: #ff8c00; color: #fff; }
         
-        .seller-portal { border: 2px dashed #1dcaff; padding: 15px; border-radius: 12px; margin: 20px 0; }
-        h2 { font-size: 1.2em; color: #fff; }
+        .seller-portal { border: 2px dashed #1dcaff; padding: 15px; border-radius: 12px; margin: 25px 0; background: rgba(29, 202, 255, 0.05); }
     </style>
 </head>
 <body>
 
     <div class="hero">
-        <h1 style="margin:0;">E-MARKET GAMBIA</h1>
-        <p style="margin:5px 0 0; font-weight:bold;">Brikama Garage • Secure Tech Lab</p>
+        <h1 style="margin:0; letter-spacing: 2px;">E-MARKET GAMBIA</h1>
+        <p style="margin:5px 0 0; font-weight:bold; font-size: 0.8em;">[ BRIKAMA GARAGE SECURE NODE ]</p>
     </div>
 
     <div class="container">
         
-        <h2 style="color: #1dcaff;">--- FEATURED GADGETS ---</h2>
+        <h2 style="color: #0f0; font-size: 1.1em; text-transform: uppercase;">--- DAILY TECH DEALS ---</h2>
+        
         <div class="ad-row">
-            <!-- Item 1 -->
+            <!-- Item 1: Charger -->
             <div class="ad-card">
-                <img src="https://unsplash.com" alt="Charger">
-                <p style="margin:5px 0;">Fast Charger</p>
-                <button class="btn-price" onclick="alert('Price: D150 - D200')">CLICK FOR PRICE</button>
+                <img src="https://media-amazon.com" alt="Fast Charger">
+                <p style="margin:8px 0 2px; font-weight:bold;">FAST CHARGER</p>
+                <button class="btn-price" onclick="alert('Price: D150 - D200')">VIEW PRICE</button>
             </div>
-            <!-- Item 2 -->
+            <!-- Item 2: Cables -->
             <div class="ad-card">
-                <img src="https://unsplash.com" alt="Cable">
-                <p style="margin:5px 0;">USB-C Cables</p>
-                <button class="btn-price" onclick="alert('Price: D50 - D100')">CLICK FOR PRICE</button>
+                <img src="https://media-amazon.com" alt="USB Cable">
+                <p style="margin:8px 0 2px; font-weight:bold;">USB-C CABLES</p>
+                <button class="btn-price" onclick="alert('Price: D50 - D100')">VIEW PRICE</button>
             </div>
-            <!-- Item 3 -->
+            <!-- Item 3: Earbuds -->
             <div class="ad-card">
-                <img src="https://unsplash.com" alt="Earbuds">
-                <p style="margin:5px 0;">Earbuds</p>
-                <button class="btn-price" onclick="alert('Price: D750')">CLICK FOR PRICE</button>
+                <img src="https://media-amazon.com" alt="Earbuds">
+                <p style="margin:8px 0 2px; font-weight:bold;">EARBUDS</p>
+                <button class="btn-price" onclick="alert('Price: D750')">VIEW PRICE</button>
             </div>
-            <!-- Item 4 -->
+            <!-- Item 4: Repair -->
             <div class="ad-card">
-                <img src="https://unsplash.com" alt="Parts">
-                <p style="margin:5px 0;">Phone Parts</p>
-                <button class="btn-price" onclick="alert('Chat for Quote')">CLICK FOR PRICE</button>
+                <img src="https://media-amazon.com" alt="Phone Parts">
+                <p style="margin:8px 0 2px; font-weight:bold;">SCREEN REPAIR</p>
+                <button class="btn-price" onclick="alert('Contact for Quote')">GET QUOTE</button>
             </div>
         </div>
 
         <div class="seller-portal">
-            <h2 style="color: #1dcaff; margin-top:0;">POST YOUR PRODUCT</h2>
+            <h2 style="color: #1dcaff; margin-top:0; font-size: 1em;">SELL ON E-MARKET</h2>
             <button class="btn-wave" onclick="window.location.href='https://wave.com'">1. PAY D500 VIA WAVE</button>
             <button style="background:#fff; color:#000;" onclick="window.location.href='https://google.com'">2. UPLOAD DATA</button>
         </div>
 
         <div style="background: #111; padding: 15px; border-radius: 12px; border: 1px solid #333;">
-            <h2 style="margin-top:0;">CONTACT TECHNICIAN</h2>
-            <button class="btn-whatsapp" onclick="window.location.href='https://wa.me'">MESSAGE QCELL (3679533)</button>
-            <button class="btn-africell" onclick="window.location.href='https://wa.me'">MESSAGE AFRICELL (2071291)</button>
+            <h2 style="margin-top:0; font-size: 1em;">DIRECT CONTACT</h2>
+            <button class="btn-whatsapp" onclick="window.location.href='https://wa.me'">QCELL (3679533)</button>
+            <button class="btn-africell" onclick="window.location.href='https://wa.me'">AFRICELL (2071291)</button>
         </div>
 
     </div>
 
-    <footer style="padding: 30px; color: #555; font-size: 0.7em;">
-        Technician: Ebrima | Brikama Garage, Gambia
+    <footer style="padding: 30px; color: #444; font-size: 0.7em;">
+        &copy; 2026 Ebrima | Brikama Garage Marketplace
     </footer>
 
 </body>
