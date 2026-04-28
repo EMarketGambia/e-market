@@ -3,63 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Market | Brikama Tech Hub</title>
+    <title>E-Market Gambia | Secure Hub</title>
     <style>
-        body { background: #000; color: #0f0; font-family: 'Courier New', monospace; margin: 0; padding: 0; text-align: center; }
-        .hero { background: linear-gradient(135deg, #1dcaff, #00ff00); color: #000; padding: 30px 10px; border-bottom: 3px solid #0f0; }
-        .container { padding: 15px; max-width: 800px; margin: auto; }
-        .ad-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0; }
-        .ad-card { background: #111; border: 2px solid #333; border-radius: 12px; overflow: hidden; padding-bottom: 10px; }
-        .ad-card img { width: 100%; height: 130px; object-fit: cover; display: block; background: #222; }
-        button { border: none; padding: 14px; border-radius: 8px; width: 100%; font-weight: bold; cursor: pointer; margin: 8px 0; font-size: 13px; }
-        .btn-price { background: #000; color: #0f0; border: 1px solid #0f0; font-size: 10px; padding: 6px; width: 85%; margin: 5px auto; display: block;}
-        .btn-wave { background: #1dcaff; color: #fff; }
-        .btn-whatsapp { background: #25D366; color: #fff; }
-        .btn-africell { background: #ff8c00; color: #fff; }
-        .seller-portal { border: 2px dashed #1dcaff; padding: 15px; border-radius: 12px; margin: 25px 0; background: rgba(29, 202, 255, 0.05); }
+        :root { --main-blue: #1dcaff; --main-green: #00ff00; --dark-bg: #0a0a0a; }
+        body { background: var(--dark-bg); color: #fff; font-family: 'Segoe UI', sans-serif; margin: 0; text-align: center; }
+        
+        /* ALIBABA STYLE HEADER */
+        .app-header { background: #111; padding: 15px; border-bottom: 2px solid var(--main-blue); position: sticky; top: 0; z-index: 1000; }
+        .search-bar { background: #222; border-radius: 20px; padding: 10px; color: #888; font-size: 0.9em; margin-top: 10px; border: 1px solid #333; }
+
+        /* CATEGORY SLIDER */
+        .categories { display: flex; overflow-x: auto; padding: 15px; gap: 20px; background: #111; }
+        .cat-item { min-width: 70px; font-size: 0.7em; color: var(--main-blue); }
+        .cat-icon { width: 45px; height: 45px; background: #222; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 5px; font-size: 1.5em; border: 1px solid var(--main-blue); }
+
+        /* POP-UP STYLE */
+        #welcome-popup { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); display: flex; align-items: center; justify-content: center; z-index: 9999; }
+        .popup-box { background: #1a1a1a; padding: 30px; border-radius: 20px; border: 2px solid var(--main-green); width: 80%; }
+
+        .container { padding: 15px; }
+        .btn-wave { background: var(--main-blue); color: #fff; padding: 18px; border-radius: 12px; width: 100%; font-weight: bold; border: none; font-size: 1.1em; box-shadow: 0 4px 15px rgba(29, 202, 255, 0.3); }
+        .card { background: #1a1a1a; border-radius: 15px; padding: 20px; border: 1px solid #333; margin-bottom: 20px; }
     </style>
 </head>
 <body>
 
-    <div class="hero">
-        <h1 style="margin:0; letter-spacing: 2px;">E-MARKET GAMBIA</h1>
-        <p style="margin:5px 0 0; font-weight:bold; font-size: 0.8em;">[ BRIKAMA GARAGE SECURE TECH LAB ]</p>
+    <!-- ALIBABA STYLE WELCOME POP-UP -->
+    <div id="welcome-popup">
+        <div class="popup-box">
+            <h2 style="color: var(--main-green);">Welcome to E-Market</h2>
+            <p>Brikama's #1 Secure Tech Hub is now Live!</p>
+            <button class="btn-wave" onclick="closePopup()">ENTER SHOP</button>
+        </div>
+    </div>
+
+    <div class="app-header">
+        <h1 style="margin:0; font-size: 1.2em; color: var(--main-blue);">E-MARKET GAMBIA</h1>
+        <div class="search-bar">🔍 Search for chargers, buds, repairs...</div>
+    </div>
+
+    <div class="categories">
+        <div class="cat-item"><div class="cat-icon">📱</div>Phones</div>
+        <div class="cat-item"><div class="cat-icon">🛠️</div>Repairs</div>
+        <div class="cat-item"><div class="cat-icon">🔌</div>Cables</div>
+        <div class="cat-item"><div class="cat-icon">🎧</div>Audio</div>
     </div>
 
     <div class="container">
-        <h2 style="color: #0f0; font-size: 1.1em;">--- DAILY TECH DEALS ---</h2>
-        <div class="ad-row">
-            <div class="ad-card">
-                <img src="https://unsplash.com" alt="Charger">
-                <p style="margin:8px 0 2px;">FAST CHARGER</p>
-                <button class="btn-price" onclick="alert('Price: D150 - D200')">CLICK PRICE</button>
-            </div>
-            <div class="ad-card">
-                <img src="https://unsplash.com" alt="Cables">
-                <p style="margin:8px 0 2px;">USB-C CABLES</p>
-                <button class="btn-price" onclick="alert('Price: D50 - D100')">CLICK PRICE</button>
-            </div>
-            <div class="ad-card">
-                <img src="https://unsplash.com" alt="Earbuds">
-                <p style="margin:8px 0 2px;">EARBUDS</p>
-                <button class="btn-price" onclick="alert('Price: D750')">CLICK PRICE</button>
-            </div>
-            <div class="ad-card">
-                <img src="https://unsplash.com" alt="Repair">
-                <p style="margin:8px 0 2px;">SCREEN REPAIR</p>
-                <button class="btn-price" onclick="alert('Contact for Quote')">GET QUOTE</button>
-            </div>
+        <div class="card">
+            <h2 style="margin-top:0;">POST PRODUCT</h2>
+            <button class="btn-wave" onclick="location.href='https://wave.com'">1. PAY D500 VIA WAVE</button>
+            <button style="background:#fff; color:#000; padding:15px; border-radius:12px; border:none; width:100%; margin-top:10px; font-weight:bold;" onclick="location.href='https://google.com'">2. UPLOAD DATA</button>
         </div>
 
-        <div class="seller-portal">
-            <button class="btn-wave" onclick="window.location.href='https://wave.com'">1. PAY D500 VIA WAVE</button>
-            <button style="background:#fff; color:#000;" onclick="window.location.href='https://google.com'">2. UPLOAD DATA</button>
-        </div>
-
-        <div style="background: #111; padding: 15px; border-radius: 12px; border: 1px solid #333;">
-            <button class="btn-whatsapp" onclick="window.location.href='https://wa.me'">MESSAGE QCELL (3679533)</button>
-            <button class="btn-africell" onclick="window.location.href='https://wa.me'">MESSAGE AFRICELL (2071291)</button>
-        </div>
+        <h3>LIVE LISTINGS</h3>
+        <div id="market-feed" style="color: #666; font-size: 0.9em;">Scanning Brikama Garage Database...</div>
     </div>
+
+    <script>
+        function closePopup() { document.getElementById('welcome-popup').style.display = 'none'; }
+        
+        // This makes the APK handle the link correctly
+        function triggerWave() {
+            window.location.href = "https://wave.com";
+        }
+    </script>
+
 </body>
 </html>
