@@ -4,54 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Market Gambia | Secure Hub</title>
-    
-    <!-- APP SETTINGS (Makes it act like an App) -->
+    <!-- App settings to make it look like a real app -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="theme-color" content="#00ff00">
-    <link rel="icon" href="https://flaticon.com">
-
+    <meta name="theme-color" content="#000000">
     <style>
         body { background-color: #000000; color: #00ff00; font-family: monospace; padding: 20px; line-height: 1.6; text-align: center;}
         .border-box { border: 2px solid #00ff00; padding: 20px; margin-bottom: 20px; border-radius: 8px; }
         .seller-portal { border: 2px dashed #1dcaff; color: #1dcaff; padding: 20px; margin-bottom: 30px; border-radius: 8px;}
         button { border: none; padding: 15px 20px; font-weight: bold; cursor: pointer; border-radius: 5px; width: 100%; margin: 10px 0; font-size: 1.1em; transition: 0.3s; }
-        button:hover { opacity: 0.8; transform: scale(1.02); }
         .btn-wave { background-color: #1dcaff; color: white; }
         .btn-upload { background-color: #ffffff; color: #000000; }
         .btn-whatsapp { background-color: #25D366; color: white; }
         .btn-africell { background-color: #ff8c00; color: white; }
         .price-tag { color: gold; font-size: 1.2em; font-weight: bold; }
-        .secure-tag { color: #5555ff; font-size: 0.8em; font-weight: bold; text-transform: uppercase; }
     </style>
 </head>
 <body>
 
     <header style="border-bottom: 1px solid #333; padding-bottom: 20px; margin-bottom: 20px;">
-        <span class="secure-tag">[ SECURE MARKETPLACE ACTIVE ]</span>
         <h1>[ E-MARKET GAMBIA ]</h1>
-        <p>Brikama Garage Tech & Trade Hub</p>
+        <p>Brikama Garage Tech Hub</p>
     </header>
 
     <div class="seller-portal">
         <h2>--- SELL YOUR GOODS ---</h2>
-        <p>Post your products for only <span class="price-tag">D500/Month</span></p>
+        <p>Post for <span class="price-tag">D500/Month</span></p>
         
-        <button class="btn-wave" onclick="location.href='https://wave.com'">
+        <!-- STEP 1: WAVE PAYMENT (FIXED) -->
+        <button class="btn-wave" onclick="window.open('https://wave.com', '_blank')">
             1. PAY D500 VIA WAVE
         </button>
 
-        <button class="btn-upload" onclick="location.href='https://google.com'">
+        <!-- STEP 2: DATA UPLOAD -->
+        <button class="btn-upload" onclick="window.open('https://google.com', '_blank')">
             2. UPLOAD PRODUCT DATA
         </button>
     </div>
 
     <div class="border-box">
         <h2>--- CONTACT ADMIN ---</h2>
-        <button class="btn-whatsapp" onclick="location.href='https://whatsapp.com.'">
+        <!-- QCELL WHATSAPP (FIXED) -->
+        <button class="btn-whatsapp" onclick="window.open('https://whatsapp.com.', '_blank')">
             MESSAGE QCELL (3679533)
         </button>
-        <button class="btn-africell" onclick="location.href='https://whatsapp.com.'">
+
+        <!-- AFRICELL WHATSAPP (FIXED) -->
+        <button class="btn-africell" onclick="window.open('https://whatsapp.com.', '_blank')">
             MESSAGE AFRICELL (2071291)
         </button>
     </div>
