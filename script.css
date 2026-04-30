@@ -1,0 +1,38 @@
+function showWave() {
+    alert("Please pay D500 to Ebrima at:\nWave: 2071291 or 3679533\n\nAfter payment, keep your Transaction ID and click 'UPLOAD PRODUCT'.");
+}
+
+const SHEET_ID = '1RugKOjvljzdFLPJXEqzHK4EaMU6F-Jodcz-ry2V01Gg';
+const SHEET_URL = `https://google.com{SHEET_ID}/gviz/tq?tqx=out:json`;
+
+fetch(SHEET_URL)
+    .then(res => res.text())
+    .then(data => {
+        const json = JSON.parse(data.substr(47).slice(0, -2));
+        const rows = json.table.rows;
+        const grid = document.getElementById('market-grid');
+        grid.innerHTML = ''; 
+
+        rows.forEach(row => {
+            // This checks every column to find your data
+            const shop = (row.c && row.c[1]) ? row.c[1].v : "E-Market Shop";
+            const product = (row.c && row.c[2]) ? row.c[2].v : "Item";
+            const price = (row.c && row.c[3]) ? row.c[3].v : "Contact for Price";
+            const phone = (row.c && row.c[4]) ? row.c[4].v : "2202071291";
+
+            grid.innerHTML += `
+                <div class="card" style="background:white; border-radius:10px; padding:10px; margin-bottom:10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <strong style="font-size:16px; color:#333;">${product}</strong>
+                    <p style="color:#ff6600; font-weight:bold; margin:5px 0;">D${price}</p>
+                    <p style="font-size:11px; color:#666;">Store: ${shop}</p>
+                    <a href="https://wa.me{phone}?text=I%20want%20to%20buy%20${product}" 
+                       style="background:#25D366; color:white; text-decoration:none; padding:10px; display:block; text-align:center; border-radius:5px; font-weight:bold; margin-top:10px;">
+                       WhatsApp Seller
+                    </a>
+                </div>`;
+        });
+    })
+    .catch(err => {
+        console.error(err);
+        document.getElementById('market-grid').innerHTML = "Check Google Sheet permissions.";
+    });
