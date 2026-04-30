@@ -2,36 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>E-Market Gambia</title>
-    <link rel="manifest" href="manifest.json">
+    
+    <!-- LINK TO YOUR BLUE STYLE AND MANIFEST -->
     <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
 </head>
 <body>
 
-<header>
-    <strong>E-MARKET GAMBIA</strong>
-    <input type="text" class="search-bar" placeholder="Search phones, repairs, cables...">
-</header>
+    <!-- 1. BLUE APP HEADER -->
+    <header>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+            <img src="logo.png" alt="Logo" style="width: 40px; height: 40px; border-radius: 8px;">
+            <h1 style="margin: 0; font-size: 22px;">E-MARKET GAMBIA</h1>
+        </div>
+        <input type="text" class="search-bar" placeholder="Search phones, repairs, chargers...">
+    </header>
 
-<div class="categories">
-    <div class="cat-item"><div class="cat-icon">📱</div>Phones</div>
-    <div class="cat-item"><div class="cat-icon">🛠️</div>Repairs</div>
-    <div class="cat-item"><div class="cat-icon">🔌</div>Cables</div>
-    <div class="cat-item"><div class="cat-icon">🎧</div>Audio</div>
-</div>
+    <!-- 2. QUICK CATEGORIES -->
+    <nav class="categories">
+        <div class="cat-item"><div class="cat-icon">📱</div>Phones</div>
+        <div class="cat-item"><div class="cat-icon">🛠️</div>Repairs</div>
+        <div class="cat-item"><div class="cat-icon">🔌</div>Cables</div>
+        <div class="cat-item"><div class="cat-icon">🎧</div>Audio</div>
+    </nav>
 
-<div class="action-box">
-    <h3>Vendor Dashboard</h3>
-    <button class="btn-wave" onclick="showWave()">1. PAY D500 VIA WAVE</button>
-    <a href="https://google.com" class="btn-upload">2. UPLOAD PRODUCT</a>
-</div>
+    <!-- 3. AUTOMATED POSTING SECTION -->
+    <section class="action-box">
+        <h3 style="margin-top: 0; color: #0056b3;">Post Your Product</h3>
+        <p style="font-size: 14px; color: #555;">Reach buyers instantly in Brikama Garage.</p>
+        <button class="btn-upload" onclick="startPostFlow()">POST PRODUCT (D500)</button>
+    </section>
 
-<h2>Live Listings</h2>
-<div class="product-grid" id="market-grid">
-    <p style="grid-column: 1/3; text-align: center;">Scanning Brikama Garage Database...</p>
-</div>
+    <!-- 4. LIVE PRODUCT GRID -->
+    <h2 style="padding-left: 15px; font-size: 18px; color: #333;">Market Feed</h2>
+    <div class="product-grid" id="market-grid">
+        <p style="grid-column: 1/3; text-align: center; color: #888;">Syncing with Market Database...</p>
+    </div>
 
-<script src="script.js"></script>
+    <!-- 5. LINK TO THE SCRIPT -->
+    <script src="script.js"></script>
+
 </body>
 </html>
