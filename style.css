@@ -1,40 +1,24 @@
+/* --- ALIBABA BLUE THEME --- */
 :root {
     --ali-blue: #0056b3;
-    --ali-light: #f4f7f8;
+    --ali-bg: #f4f7f8;
     --wa-green: #25d366;
-    --wave-blue: #00a1e4;
+    --wave-light-blue: #00a1e4;
 }
 
-body { font-family: 'Segoe UI', sans-serif; background: var(--ali-light); margin: 0; padding: 0; }
+body { font-family: 'Arial', sans-serif; background-color: var(--ali-bg); margin: 0; padding: 0; }
 
-header { background: var(--ali-blue); padding: 15px; color: white; text-align: center; }
-.logo { font-weight: bold; font-size: 1.2rem; margin-bottom: 10px; }
-.search-box { background: white; border-radius: 20px; padding: 8px 15px; display: flex; align-items: center; width: 85%; margin: 0 auto; }
-.search-box input { border: none; width: 100%; outline: none; }
-.search-box i { color: #888; }
+/* Sticky Top Bar */
+header { background: var(--ali-blue); color: white; padding: 15px; text-align: center; position: sticky; top: 0; z-index: 100; }
+.search-bar { width: 90%; padding: 10px; border-radius: 20px; border: none; margin-top: 10px; }
 
-.categories { display: flex; justify-content: space-around; background: white; padding: 15px 0; border-bottom: 1px solid #ddd; }
-.cat-item { text-align: center; font-size: 0.8rem; color: var(--ali-blue); }
-.cat-item i { display: block; font-size: 1.5rem; margin-bottom: 5px; }
+/* Product Feed */
+.market-container { padding: 10px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.card { background: white; border-radius: 8px; padding: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+.card h3 { font-size: 14px; margin: 5px 0; }
+.price { color: var(--ali-blue); font-weight: bold; font-size: 18px; }
 
-.product-card { background: white; margin: 15px; padding: 15px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); position: relative; }
-.badge { background: #fff3e0; color: #ff9800; font-size: 0.7rem; padding: 2px 8px; border-radius: 5px; display: inline-block; }
-.price { font-size: 1.5rem; font-weight: bold; color: var(--ali-blue); margin: 10px 0; }
-
-.btn-group { display: flex; flex-direction: column; gap: 10px; }
-.btn { 
-    padding: 12px; 
-    border-radius: 8px; 
-    text-align: center; 
-    text-decoration: none; 
-    font-weight: bold; 
-    border: none; 
-    cursor: pointer;
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-.wave-btn { background: var(--wave-blue); color: white; }
-.wa-btn { background: var(--wa-green); color: white; }
+/* Automated Buttons */
+.btn { width: 100%; padding: 10px; margin-top: 5px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; display: block; text-decoration: none; text-align: center; }
+.pay-btn { background: var(--wave-light-blue); }
+.wa-btn { background: var(--wa-green); }
