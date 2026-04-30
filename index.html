@@ -2,50 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Market Gambia</title>
-    
-    <!-- LINK TO YOUR BLUE STYLE AND MANIFEST -->
+    <!-- This line connects your CSS - make sure the filename matches exactly! -->
     <link rel="stylesheet" href="style.css">
-    <link rel
-
-    <!-- 1. BLUE A="manifest" href="manifest.json">
+    <!-- Icons for that Alibaba look -->
+    <link rel="stylesheet" href="https://cloudflare.com">
 </head>
 <body>
 
-    <!-- 1. BLUE APP HEADER -->
-    <header>
-        <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
-            <img src="logo.png" alt="Logo" style="width: 40px; height: 40px; border-radius: 8px;">
-            <h1 style="margin: 0; font-size: 22px;">E-MARKET GAMBIA</h1>
-        </div>
-        <input type="text" class="search-bar" placeholder="Search phones, repairs, chargers...">
-    </header>
-
-    <!-- 2. QUICK CATEGORIES -->
-    <nav class="categories">
-        <div class="cat-item"><div class="cat-icon">📱</div>Phones</div>
-        <div class="cat-item"><div class="cat-icon">🛠️</div>Repairs</div>
-        <div class="cat-item"><div class="cat-icon">🔌</div>Cables</div>
-        <div class="cat-item"><div class="cat-icon">🎧</div>Audio</div>
-    </nav>
-
-    <!-- 3. AUTOMATED POSTING SECTION -->
-    <section class="action-box">
-        <h3 style="margin-top: 0; color: #0056b3;">Post Your Product</h3>
-        <p style="font-size: 14px; color: #555;">Reach buyers instantly in Brikama Garage.</p>
-        <button class="btn-upload" onclick="startPostFlow()">POST PRODUCT (D500)</button>
-    </section>
-
-    <!-- 4. LIVE PRODUCT GRID -->
-    <h2 style="padding-left: 15px; font-size: 18px; color: #333;">Market Feed</h2>
-    <div class="product-grid" id="market-grid">
-        <p style="grid-column: 1/3; text-align: center; color: #888;">Syncing with Market Database...</p>
+<header>
+    <div class="logo">E-MARKET GAMBIA</div>
+    <div class="search-box">
+        <input type="text" placeholder="Search phones, repairs, chargers...">
+        <i class="fas fa-search"></i>
     </div>
+</header>
 
-    <!-- 5. LINK TO THE SCRIPT -->
-    <script src="script.js"></script>
+<nav class="categories">
+    <div class="cat-item"><i class="fas fa-mobile-alt"></i><span>Phones</span></div>
+    <div class="cat-item"><i class="fas fa-tools"></i><span>Repairs</span></div>
+    <div class="cat-item"><i class="fas fa-plug"></i><span>Cables</span></div>
+    <div class="cat-item"><i class="fas fa-headphones"></i><span>Audio</span></div>
+</nav>
+
+<main class="market-feed">
+    <div class="product-card">
+        <div class="badge">Brikama Garage</div>
+        <h3>Pro Phone Repair Service</h3>
+        <p class="price">D500</p>
+        
+        <div class="btn-group">
+            <!-- Automated Wave Button -->
+            <button onclick="payWave()" class="btn wave-btn">
+                <i class="fas fa-wallet"></i> Pay with Wave
+            </button>
+            
+            <!-- Working WhatsApp Button -->
+            <a href="https://wa.me" class="btn wa-btn">
+                <i class="fab fa-whatsapp"></i> Chat Seller
+            </a>
+        </div>
+    </div>
+</main>
+
+<script>
+    function payWave() {
+        // This will redirect to your Wave payment link
+        window.location.href = "https://wave.com"; 
+    }
+</script>
 
 </body>
 </html>
-Index.
