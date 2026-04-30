@@ -1,48 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>E-Market Gambia</title>
-    
-    <!-- LINK TO YOUR BLUE STYLE AND MANIFEST -->
     <link rel="stylesheet" href="style.css">
-    <link rel="manifest" href="manifest.json">
 </head>
 <body>
-
-    <!-- 1. BLUE APP HEADER -->
     <header>
-        <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
-            <img src="logo.png" alt="Logo" style="width: 40px; height: 40px; border-radius: 8px;">
-            <h1 style="margin: 0; font-size: 22px;">E-MARKET GAMBIA</h1>
-        </div>
-        <input type="text" class="search-bar" placeholder="Search phones, repairs, chargers...">
+        <h1>E-MARKET GAMBIA</h1>
+        <input type="text" class="search-bar" placeholder="Search products...">
     </header>
 
-    <!-- 2. QUICK CATEGORIES -->
-    <nav class="categories">
-        <div class="cat-item"><div class="cat-icon">📱</div>Phones</div>
-        <div class="cat-item"><div class="cat-icon">🛠️</div>Repairs</div>
-        <div class="cat-item"><div class="cat-icon">🔌</div>Cables</div>
-        <div class="cat-item"><div class="cat-icon">🎧</div>Audio</div>
-    </nav>
-
-    <!-- 3. AUTOMATED POSTING SECTION -->
-    <section class="action-box">
-        <h3 style="margin-top: 0; color: #0056b3;">Post Your Product</h3>
-        <p style="font-size: 14px; color: #555;">Reach buyers instantly in Brikama Garage.</p>
-        <button class="btn-upload" onclick="startPostFlow()">POST PRODUCT (D500)</button>
-    </section>
-
-    <!-- 4. LIVE PRODUCT GRID -->
-    <h2 style="padding-left: 15px; font-size: 18px; color: #333;">Market Feed</h2>
-    <div class="product-grid" id="market-grid">
-        <p style="grid-column: 1/3; text-align: center; color: #888;">Syncing with Market Database...</p>
+    <div class="product-card">
+        <h3>Samsung Galaxy Screen Repair</h3>
+        <p class="price">D500</p>
+        
+        <div class="action-buttons">
+            <!-- Automated Wave Payment -->
+            <button onclick="startWavePayment('D500')" class="btn pay-btn">Pay with Wave (Auto)</button>
+            
+            <!-- Direct WhatsApp Chat to Ebrima -->
+            <a href="https://wa.me" 
+               class="btn chat-btn" target="_blank">Chat with Seller</a>
+        </div>
     </div>
 
-    <!-- 5. LINK TO THE SCRIPT -->
     <script src="script.js"></script>
-
 </body>
 </html>
