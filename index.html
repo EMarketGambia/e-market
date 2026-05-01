@@ -2,56 +2,175 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Market Gambia</title>
-    <!-- This line connects your CSS - make sure the filename matches exactly! -->
-    <link rel="stylesheet" href="style.css">
-    <!-- Icons for that Alibaba look -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>E-MARKET GAMBIA | ALIBABA CLONE</title>
+    <!-- Icons & Styling -->
     <link rel="stylesheet" href="https://cloudflare.com">
+    <style>
+        :root { --ali-blue: #002f6c; --ali-orange: #ff6600; --bg: #f0f2f5; --white: #ffffff; }
+        body { font-family: 'Helvetica', Arial, sans-serif; background: var(--bg); margin: 0; padding-bottom: 70px; overflow-x: hidden; }
+        
+        /* 1. Header & Search Bar */
+        header { background: var(--ali-blue); padding: 12px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        .search-container { background: var(--white); border-radius: 20px; display: flex; align-items: center; padding: 8px 15px; width: 90%; margin: 0 auto; }
+        .search-container input { border: none; width: 100%; outline: none; margin-left: 10px; font-size: 16px; }
+        .search-container i { color: #888; }
+
+        /* 2. Professional Slider (Background Pics) */
+        .slider-box { width: 100%; height: 180px; overflow: hidden; position: relative; }
+        .slides { display: flex; width: 500%; animation: slideAnim 20s infinite; }
+        .slides img { width: 20%; height: 180px; object-fit: cover; }
+        @keyframes slideAnim { 
+            0% {transform: translateX(0);} 20% {transform: translateX(-20%);} 
+            40% {transform: translateX(-40%);} 60% {transform: translateX(-60%);} 
+            80% {transform: translateX(-80%);} 100% {transform: translateX(0);} 
+        }
+
+        /* 3. Alibaba Category Grid */
+        .cat-section { display: grid; grid-template-columns: repeat(4, 1fr); background: var(--white); padding: 15px 5px; text-align: center; border-bottom: 1px solid #ddd; }
+        .cat-card { font-size: 11px; color: var(--ali-blue); font-weight: bold; cursor: pointer; }
+        .cat-card i { display: block; font-size: 26px; margin-bottom: 5px; color: var(--ali-blue); }
+
+        /* 4. Seller Posting Area */
+        .post-area { background: var(--white); margin: 10px; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .post-area h2 { font-size: 16px; color: var(--ali-blue); margin-top: 0; }
+        .post-area input, .post-area select { width: 92%; padding: 10px; margin: 5px 0; border: 1px solid #ccc; border-radius: 5px; }
+        .post-btn { background: var(--ali-orange); color: white; width: 100%; padding: 12px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; }
+
+        /* 5. Product Market Feed (Two Columns) */
+        .market-feed { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 10px; }
+        .p-card { background: var(--white); border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.05); display: flex; flex-direction: column; }
+        .p-card img { width: 100%; height: 130px; object-fit: cover; background: #eee; }
+        .p-info { padding: 8px; flex-grow: 1; }
+        .p-info h3 { font-size: 13px; margin: 0; color: #333; height: 32px; overflow: hidden; }
+        .p-price { color: var(--ali-blue); font-size: 18px; font-weight: bold; margin: 5px 0; display: block; }
+
+        /* 6. Action Buttons */
+        .btn-box { display: flex; flex-direction: column; gap: 5px; margin-top: 5px; }
+        .act-btn { padding: 8px; border-radius: 4px; border: none; font-weight: bold; text-align: center; text-decoration: none; font-size: 12px; }
+        .wave-btn { background: #00a1e4; color: white; }
+        .wa-btn { background: #25d366; color: white; }
+
+        /* 7. Bottom Navigation */
+        .bottom-nav { position: fixed; bottom: 0; width: 100%; background: var(--white); display: flex; justify-content: space-around; padding: 10px 0; border-top: 1px solid #ddd; z-index: 1000; }
+        .bottom-nav a { text-align: center; color: #666; text-decoration: none; font-size: 11px; }
+        .bottom-nav i { display: block; font-size: 22px; margin-bottom: 2px; }
+        .active-nav { color: var(--ali-orange) !important; }
+    </style>
 </head>
 <body>
 
 <header>
-    <div class="logo">E-MARKET GAMBIA</div>
-    <div class="search-box">
-        <input type="text" placeholder="Search phones, repairs, chargers...">
+    <div class="search-container">
         <i class="fas fa-search"></i>
+        <input type="text" id="mainSearch" placeholder="Search Repairs, Chargers..." onkeyup="filterItems()">
     </div>
 </header>
 
-<nav class="categories">
-    <div class="cat-item"><i class="fas fa-mobile-alt"></i><span>Phones</span></div>
-    <div class="cat-item"><i class="fas fa-tools"></i><span>Repairs</span></div>
-    <div class="cat-item"><i class="fas fa-plug"></i><span>Cables</span></div>
-    <div class="cat-item"><i class="fas fa-headphones"></i><span>Audio</span></div>
+<div class="slider-box">
+    <div class="slides">
+        <img src="https://unsplash.com" alt="Repair">
+        <img src="https://unsplash.com" alt="Phones">
+        <img src="https://unsplash.com" alt="Tech">
+        <img src="https://unsplash.com" alt="Charger">
+        <img src="https://unsplash.com" alt="Electronics">
+    </div>
+</div>
+
+<nav class="cat-section">
+    <div class="cat-card" onclick="catFilter('phone')"><i class="fas fa-mobile-alt"></i>Phones</div>
+    <div class="cat-card" onclick="catFilter('repair')"><i class="fas fa-tools"></i>Repairs</div>
+    <div class="cat-card" onclick="catFilter('charger')"><i class="fas fa-plug"></i>Chargers</div>
+    <div class="cat-card" onclick="catFilter('all')"><i class="fas fa-th-large"></i>All</div>
 </nav>
 
-<main class="market-feed">
-    <div class="product-card">
-        <div class="badge">Brikama Garage</div>
-        <h3>Pro Phone Repair Service</h3>
-        <p class="price">D500</p>
-        
-        <div class="btn-group">
-            <!-- Automated Wave Button -->
-            <button onclick="payWave()" class="btn wave-btn">
-                <i class="fas fa-wallet"></i> Pay with Wave
-            </button>
-            
-            <!-- Working WhatsApp Button -->
-            <a href="https://wa.me" class="btn wa-btn">
-                <i class="fab fa-whatsapp"></i> Chat Seller
-            </a>
-        </div>
-    </div>
+<section class="post-area">
+    <h2>Post Your Product</h2>
+    <input type="text" id="postName" placeholder="Product Name">
+    <input type="number" id="postPrice" placeholder="Price (D)">
+    <select id="postCat">
+        <option value="phone">Phones</option>
+        <option value="repair">Repairs</option>
+        <option value="charger">Chargers</option>
+    </select>
+    <button class="post-btn" onclick="postToMarket()">Post Now</button>
+</section>
+
+<main class="market-feed" id="marketDisplay">
+    <!-- Products appear here automatically -->
 </main>
 
+<nav class="bottom-nav">
+    <a href="#" class="active-nav"><i class="fas fa-home"></i>Home</a>
+    <a href="https://wa.me"><i class="fas fa-comment-dots"></i>Chat</a>
+    <a href="#"><i class="fas fa-shopping-basket"></i>Cart</a>
+    <a href="#"><i class="fas fa-user-circle"></i>Profile</a>
+</nav>
+
 <script>
-    function payWave() {
-        // This will redirect to your Wave payment link
-        window.location.href = "https://wave.com"; 
+    // --- DATABASE (Initial Products) ---
+    let products = [
+        { name: "Super Fast USB-C Charger", price: 350, cat: "charger", img: "https://unsplash.com" },
+        { name: "Samsung Screen Repair", price: 1500, cat: "repair", img: "https://unsplash.com" },
+        { name: "iPhone 13 Pro Case", price: 400, cat: "phone", img: "https://unsplash.com" }
+    ];
+
+    // --- RENDER FUNCTION (The magic that builds the app) ---
+    function updateApp(list) {
+        const display = document.getElementById('marketDisplay');
+        display.innerHTML = list.map(p => `
+            <div class="p-card">
+                <img src="${p.img}">
+                <div class="p-info">
+                    <h3>${p.name}</h3>
+                    <span class="p-price">D${p.price}</span>
+                    <div class="btn-box">
+                        <a href="https://wave.com" class="act-btn wave-btn">Wave Pay</a>
+                        <a href="https://wa.me?text=I%20want%20to%20buy%20${encodeURIComponent(p.name)}" class="act-btn wa-btn">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        `).join('');
     }
+
+    // --- SEARCH LOGIC ---
+    function filterItems() {
+        let query = document.getElementById('mainSearch').value.toLowerCase();
+        let filtered = products.filter(x => x.name.toLowerCase().includes(query));
+        updateApp(filtered);
+    }
+
+    // --- CATEGORY LOGIC ---
+    function catFilter(type) {
+        if(type === 'all') { updateApp(products); }
+        else {
+            let filtered = products.filter(x => x.cat === type);
+            updateApp(filtered);
+        }
+    }
+
+    // --- POSTING LOGIC ---
+    function postToMarket() {
+        let n = document.getElementById('postName').value;
+        let p = document.getElementById('postPrice').value;
+        let c = document.getElementById('postCat').value;
+        
+        if(n && p) {
+            products.unshift({ name: n, price: p, cat: c, img: "https://placeholder.com" });
+            updateApp(products);
+            alert("Success! Your product is live on E-Market Gambia.");
+            // Clear inputs
+            document.getElementById('postName').value = '';
+            document.getElementById('postPrice').value = '';
+        } else {
+            alert("Please enter Name and Price.");
+        }
+    }
+
+    // --- START THE APP ---
+    updateApp(products);
 </script>
 
 </body>
 </html>
+Maaain
