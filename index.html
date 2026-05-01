@@ -170,7 +170,31 @@
     // --- START THE APP ---
     updateApp(products);
 </script>
+<!-- Google Form with a Button to show/hide it -->
+<div style="text-align: center; margin: 20px;">
+    <button onclick="toggleForm()" style="padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        Post a New Product
+    </button>
+</div>
 
+<div id="google-form-container" style="display: none; text-align: center;">
+    <iframe 
+        src="https://google.com" 
+        width="100%" 
+        height="700" 
+        frameborder="0">Loading…</iframe>
+</div>
+
+<script>
+function toggleForm() {
+    var x = document.getElementById("google-form-container");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
 </body>
 </html>
 Maaain
