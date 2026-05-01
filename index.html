@@ -170,31 +170,15 @@
     // --- START THE APP ---
     updateApp(products);
 </script>
-<!-- Google Form with a Button to show/hide it -->
-<div style="text-align: center; margin: 20px;">
-    <button onclick="toggleForm()" style="padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
-        Post a New Product
-    </button>
+<!-- Button to open Google Form in a new tab -->
+<div style="text-align: center; margin: 30px 0; padding: 20px; border-top: 1px solid #ddd;">
+    <p style="color: #666; font-family: sans-serif;
+    <a href=https://docs.google.com/forms/d/e/1FAIpQLSf1lsEfe3RaR6Yl48vGiSpgE7gZ4oiBb8nFlR9Jl1X60Fevlw/viewform?usp=sharing&ouid=100753920198956387547">Want to sell something?</p>
+       target="_blank" 
+       style="display: inline-block; padding: 15px 30px; background-color: #ff9800; color: white; text-decoration: none; font-weight: bold; border-radius: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        🚀 POST A NEW PRODUCT
+    </a>
 </div>
-
-<div id="google-form-container" style="display: none; text-align: center;">
-    <iframe 
-        src="https://google.com" 
-        width="100%" 
-        height="700" 
-        frameborder="0">Loading…</iframe>
-</div>
-
-<script>
-function toggleForm() {
-    var x = document.getElementById("google-form-container");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
-}
-</script>
 </body>
 </html>
-Maaain
+
