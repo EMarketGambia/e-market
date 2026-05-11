@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ebrima Express | Alibaba Style</title>
+    <!-- Bootstrap for professional UI -->
+    <link href="https://jsdelivr.net" rel="stylesheet">
+    <style>
+        :root { --orange: #ff6a00; }
+        .navbar { background-color: white; border-bottom: 2px solid var(--orange); }
+        .btn-buy { background-color: var(--orange); color: white; border-radius: 20px; }
+        .product-card { border: none; transition: 0.3s; }
+        .product-card:hover { shadow: 0 4px 8px rgba(0,0,0,0.1); transform: translateY(-5px); }
+    </style>
+</head>
+<body class="bg-light">
+
+    <!-- Header / Search -->
+    <nav class="navbar sticky-top">
+        <div class="container d-flex justify-content-between">
+            <h4 class="text-warning fw-bold">E-Gambia</h4>
+            <input type="text" class="form-control w-50" placeholder="Search for products...">
+            <button class="btn btn-outline-warning">Cart</button>
+        </div>
+    </nav>
+
+    <!-- Product Grid -->
+    <div class="container mt-4">
+        <div id="product-container" class="row row-cols-2 row-cols-md-4 g-3">
+            <!-- Products will be loaded here automatically from Django -->
+            <div class="col text-center mt-5">
+                <div class="spinner-border text-warning" role="status"></div>
+                <p>Connecting to backend...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- API Connection Script -->
+    <script>
+        const DJANGO_API_URL = "https://your-cloudflare-domain.com";
+
+        async function loadProducts() {
+            try {
+                const response = await fetch(DJANGO_API_URL);
+                const data = await response.json();
+                const container = document.getElementById('product-container');
+                container.innerHTML = ''; // Clear loading spinner
+
+                data.forEach(product => {
+                    container.innerHTML += `
+                        <div class="col">
+                            <div class="card h-100 product-card p-2">
+                                <img src="${product.image_url}" class="card-img-top" alt="product">
+                                <div class="card-body p-1">
+                                    <p class="card-text mb-1">${product.name}</p>
+                                    <h5 class="text-danger">D${product.price}</h5>
+                                    <button onclick="orderNow(${product.id})" class="btn btn-buy btn-sm w-100">Buy Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+            } catch (err) {
+                console.error("Connection failed:", err);
+                document.getElementById('product-container').innerHTML = "<p class='text-center'>Error connecting to Django API</p>";
+            }
+        }
+
+        function orderNow(id) {
+            alert("Order automation triggered for Product ID: " + id);
+            // This is where you'd send a POST request to your Django backend
+        }
+
+        window.onload = loadProducts;
+    </script>
+</body>
+</html>
+
