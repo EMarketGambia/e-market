@@ -1,0 +1,6 @@
+.config/
+.cache/
+.ssh/
+storage/
+*.key
+*.private
