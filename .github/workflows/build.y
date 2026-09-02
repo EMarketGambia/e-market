@@ -14,20 +14,20 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Setup Java Runtime Engine
+      - name: Setup Java Engine
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Inject System Build Dependencies
+      - name: Inject System Dependencies Natively
         run: |
           sudo apt-get update
           sudo apt-get install -y libffi-dev SDL2 libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev \
           pkg-config libportmidi-dev libgstreamer1.0-dev gstreamer1.0-plugins-base gstreamer1.0-plugins-good \
           unzip zip ccache autoconf libtool
 
-      - name: Run Buildozer App Compiler
+      - name: Run Buildozer Compiler
         run: |
           pip install --upgrade pip
           pip install Cython virtualenv buildozer
