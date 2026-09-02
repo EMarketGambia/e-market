@@ -6,8 +6,8 @@ source.dir = .
 source.include_exts = py,png,jpg,kv,atlas
 version = 1.0.0
 
-# 👇 This exact line tells the cloud runner to fetch the correct stable engines
-requirements = python3,kivy==2.3.0,kivymd==1.2.0,pillow,requests
+# Using raw, standard requirements to prevent environment version loops
+requirements = python3,kivy
 
 orientation = portrait
 fullscreen = 0
