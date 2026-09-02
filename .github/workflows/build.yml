@@ -32,7 +32,7 @@ jobs:
           pip install --upgrade pip
           pip install Cython virtualenv buildozer
           
-          # 👇 THIS FORCE OVERRIDE SHORT-CIRCUITS BUILDOZER'S ROOT LOCK FOREVER
+          # 👇 THIS FORCED PARAMETER BYPASSES THE EXIT CODE 100 ERROR
           buildozer --allow-root android debug
         env:
           APP_ANDROID_ACCEPT_SDK_LICENSE: "1"
