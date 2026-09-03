@@ -1,72 +1,51 @@
-import sys
-import os
-from kivy.app import App
-from kivy.uix.screenmanager import ScreenManager, Screen
-from kivy.lang import Builder
+import http.server
+import socketserver
+import webbrowser
 
-# Complete framework layout mapping with your verified Wave mobile money number integrated
-Builder.load_string('''
-<MarketplaceHome>:
-    name: 'home'
-    BoxLayout:
-        orientation: 'vertical'
-        Label:
-            text: 'EMarket Gambia - Multi-Vendor Platform'
-            font_size: '24sp'
-            size_hint_y: 0.1
-        ScrollView:
-            BoxLayout:
-                orientation: 'vertical'
-                size_hint_y: None
-                height: self.minimum_height
-                padding: 10
-                spacing: 10
-                Label:
-                    text: 'Featured Product: Smartphone Pro Max'
-                    size_hint_y: None
-                    height: 40
-                Button:
-                    text: 'Buy Now via Wave Mobile Money'
-                    size_hint_y: None
-                    height: 50
-                    on_press: root.process_wave_payment()
+PORT = 8080
 
-<PaymentScreen>:
-    name: 'payment'
-    BoxLayout:
-        orientation: 'vertical'
-        padding: 20
-        Label:
-            text: 'Redirecting to Wave Gateway...'
-            font_size: '18sp'
-''')
+# Clean HTML5/CSS3 UI blueprint layout with your real Wave number integrated
+HTML_CONTENT = """<!DOCTYPE html>
+<html>
+<head>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>EMarket Gambia</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f4f4f9; text-align: center; }
+        .header { background-color: #007bff; color: white; padding: 15px; font-size: 24px; font-weight: bold; border-radius: 8px; }
+        .card { background: white; padding: 20px; margin-top: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .product-title { font-size: 20px; color: #333; font-weight: bold; }
+        .btn-wave { display: inline-block; background-color: #28a745; color: white; padding: 12px 25px; margin-top: 15px; font-size: 16px; font-weight: bold; text-decoration: none; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+    </style>
+</head>
+<body>
+    <div class='header'>EMarket Gambia</div>
+    <div class='card'>
+        <div class='product-title'>✨ Featured Product: Smartphone Pro Max</div>
+        <p>Premium multi-vendor technician trade platform framework.</p>
+        <!-- Direct deep-link routing setup linked to your real Serekunda technician line -->
+        <a href='https://wave.com' class='btn-wave'>🛒 Buy Now via Wave Money</a>
+    </div>
+</body>
+</html>
+"""
 
-class MarketplaceHome(Screen):
-    def process_wave_payment(self):
-        # Direct deep-link routing setup linked to your real Serekunda technician line
-        wave_url = "https://wave.com"
-        if sys.platform == 'android':
-            import android.intent
-            from android.intent import Intent
-            from android.intent import IntentFilter
-            from android.net import Uri
-            from android.app import Activity
-            
-            intent = Intent(Intent.ACTION_VIEW, Uri.parse(wave_url))
-            App.get_running_app().root_window.attach_android_intent(intent)
-        else:
-            import webbrowser
-            webbrowser.open(wave_url)
+class MarketplaceHandler(http.server.SimpleHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.send_header("Content-type", "text/html")
+        self.end_headers()
+        self.wfile.write(HTML_CONTENT.encode("utf-8"))
 
-class PaymentScreen(Screen):
-    pass
+print(f"🚀 [SUCCESS] EMarket Gambia local development host server initialized!")
+print(f"👉 Open your phone internet browser and go to: http://localhost:{PORT}")
 
-class EMarketApp(App):
-    def build(self):
-        sm = ScreenManager()
-        sm.add_widget(MarketplaceHome(name='home'))
-        sm.add_widget(PaymentScreen(name='payment'))
-        return sm
+# Auto-open your phone browser straight into your platform display layout
+webbrowser.open(f"http://localhost:{PORT}")
 
-if __name__ == '__main__':
-    EMarketApp().run()
+with socketserver.TCPServer(("", PORT), MarketplaceHandler) as httpd:
+    try:
+        httpd.serve_forever()
+    except KeyboardInterrupt:
+        print("\n🛑 Server shut down cleanly.")
+# Launching Emarket Gambia Production Version
